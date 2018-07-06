@@ -119,10 +119,12 @@ sudo mkdir -p /etc/nginx/ssl/webhook.ucoder.ir
 sudo openssl dhparam -out /etc/nginx/ssl/webhook.ucoder.ir/dhparam.pem 4096
 ```
 
+```bash
 sudo vim /etc/nginx/conf.d/webhook.ucoder.ir.conf
-...............................
+```
+```
 ssl_dhparam /etc/nginx/ssl/webhook.ucoder.ir/dhparam.pem;
-...............................
+```
 
 **test nginx configuration**
 ```bash
