@@ -50,8 +50,5 @@ func handlePush(payload interface{}, header webhooks.Header) {
 
 func handleUcoder() {
 	cwd := "/usr/share/nginx/ucoder.ir"
-	run(cwd, "/bin/git", "pull", "origin", "master")
-	run(cwd, "/usr/local/bin/hexo", "generate")
-	run(cwd, "/bin/chcon", "-Rt", "httpd_sys_content_t", cwd)
-	run(cwd, "/bin/systemctl", "restart", "nginx")
+	run(cwd, "/bin/bash", "/srv/ucoder.ir/bin/redeploy.sh")
 }
